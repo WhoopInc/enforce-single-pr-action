@@ -1,0 +1,42 @@
+{
+  "name": "enforce-single-pr",
+  "version": "0.0.1",
+  "private": true,
+  "description": "An action which ensures only a single PR matching some criteria is open.",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf lib/*",
+    "debug": "yarn clean && yarn install && yarn build",
+    "release": "yarn clean && yarn install --production && yarn build",
+    "test": "jest",
+    "package": "ncc build --source-map --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaiahmoran/enforce-single-pr.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "Isaiah Moran",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@types/glob": "^7.2.0",
+    "@vercel/ncc": "^0.32.0",
+    "glob": "^7.2.0",
+    "untildify": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "jest": "^27.3.1",
+    "jest-circus": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
+  }
+}
